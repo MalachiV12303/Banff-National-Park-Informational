@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import bannfBackground from  '../assets/banff1.jpg';
+import imageBackground from  '../assets/banff1.jpg';
 const { imageUrl } = Astro.props;
+
 ---
 
 <section>
-	<Image src={bannfBackground} width={3840} height={2160} id='backgroundImage' alt={'placeholder'}/>
+	<Image src={imageBackground} width={3840} height={2160} id='backgroundImage' alt={'placeholder'}/>
 	<div>
 		<h1>Canada's First National Park</h1>
 		<p>
