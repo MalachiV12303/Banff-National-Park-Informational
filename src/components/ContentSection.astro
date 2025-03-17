@@ -4,7 +4,7 @@ const { imageUrl } = Astro.props;
 
 <section>
 	<img src={imageUrl} />
-	<div class="testFadeIn">
+	<div>
 		<h1>Canada's First National Park</h1>
 		<p>
 			Rocky Mountain peaks, turquoise glacial lakes, a picture-perfect
@@ -19,21 +19,12 @@ const { imageUrl } = Astro.props;
 	</div>
 </section>
 
-<script>
-	import { animate } from "motion";
-	animate(".testFadeIn", { opacity: 1 }, { duration: 2 });
-</script>
-
 <style>
-	.testFadeIn {
-		opacity: 0;
-	}
-
 	img {
 		position: absolute;
 		z-index: -1;
-		filter: brightness(60%);
-		width: 100%;;
+		filter: brightness(70%);
+		width: 100%;
 	}
 
 	div {
@@ -44,10 +35,11 @@ const { imageUrl } = Astro.props;
 
 	section {
 		position: relative;
-		height: 95dvh;
+		height: 80dvh;
 		display: flex;
 		align-items: center;
 		justify-content: end;
+		overflow: hidden;
 	}
 
 	h1 {
