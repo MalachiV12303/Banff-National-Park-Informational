@@ -1,9 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 const { imageUrl } = Astro.props;
 ---
 
 <section>
-	<img src={imageUrl} />
+	<Image id='backgroundImage' src={imageUrl} alt={'placeholder'}/>
 	<div>
 		<h1>Canada's First National Park</h1>
 		<p>
@@ -20,7 +21,7 @@ const { imageUrl } = Astro.props;
 </section>
 
 <style>
-	img {
+	#backgroundImage {
 		position: absolute;
 		z-index: -1;
 		filter: brightness(70%);
