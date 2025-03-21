@@ -1,9 +1,11 @@
 ---
+
 import { Image } from 'astro:assets';
 import imageBackground from  '../assets/banff1.jpg';
+
 ---
 
-<section>
+<section class="height">
 	<Image src={imageBackground} width={3840} height={2160} id='backgroundImage' alt={'placeholder'}/>
 	<div>
 		<h1>Canada's First National Park</h1>
@@ -35,15 +37,18 @@ import imageBackground from  '../assets/banff1.jpg';
 		padding-right: 12rem;
 	}
 
+	.height {
+		height: 95dvh;
+	}
+
 	section {
 		position: relative;
-		height: 100dvh;
 		display: flex;
 		align-items: center;
 		justify-content: end;
 		overflow: hidden;
 	}
-	
+
 	h1 {
 		font-family: "Inter-Black", Helvetica;
 		font-weight: 800;
