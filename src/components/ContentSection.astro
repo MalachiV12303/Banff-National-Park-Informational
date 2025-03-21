@@ -5,7 +5,7 @@ import imageBackground from  '../assets/banff1.jpg';
 
 ---
 
-<section class="height">
+<section>
 	<Image src={imageBackground} width={3840} height={2160} id='backgroundImage' alt={'placeholder'}/>
 	<div>
 		<h1>Canada's First National Park</h1>
@@ -37,13 +37,10 @@ import imageBackground from  '../assets/banff1.jpg';
 		padding-right: 12rem;
 	}
 
-	.height {
-		height: 95dvh;
-	}
-
 	section {
 		position: relative;
 		display: flex;
+		height: 95dvh;
 		align-items: center;
 		justify-content: end;
 		overflow: hidden;
