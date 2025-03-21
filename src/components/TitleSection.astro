@@ -1,11 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import imageBackground from  '../assets/banffTitle1.jpg';
-const { topWord, bottomWord } = Astro.props;
+const { topWord, bottomWord, imageUrl } = Astro.props;
 ---
 
 <section>
-	<Image src={imageBackground} width={3840} height={2160} id='parallax' alt={'placeholder'} />
+	<img src={imageUrl} width={3840} height={2160} id='parallax' alt={'placeholder'} />
 	<h1 id="title">{topWord}<span>{bottomWord}</span></h1>
 </section>
 
