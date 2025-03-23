@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^8.1.2",
+    "@tresjs/core": "^4.3.3",
     "astro": "^5.5.2",
-    "motion": "^12.5.0"
+    "motion": "^12.5.0",
+    "three": "^0.174.0"
   }
 }
