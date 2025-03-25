@@ -4,8 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/bannfIcon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
-		<title>Banff Informational</title>
+		<title>Banff National Park</title>
 	</head>
 	<body id="viewport">
 		<slot />
@@ -13,17 +19,21 @@
 </html>
 
 <style>
-	html {
+	* {
 		margin: 0;
+		-webkit-font-smoothing: antialiased;
+		box-sizing: border-box;
+	}
+
+	html {
 		width: 100%;
 		height: 100%;
 	}
 
 	body {
-		margin: 0;
 		width: 100%;
 		height: 100%;
-		overflow-y: scroll;
+		overflow-y: auto;
 		overflow-x: hidden;
 		background-color: #151515;
 	}

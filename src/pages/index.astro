@@ -1,18 +1,17 @@
 ---
 import Banner from '../components/Banner.astro';
 import Reservations from '../components/Reservations.astro';
-import ContentSection from '../components/ContentSection.astro';
-import TitleSection from '../components/TitleSection.astro';
+import History from '../components/History.astro';
+import Title from '../components/Title.astro';
 import Layout from '../layouts/Layout.astro';
 import Landing from '../components/Landing.astro';
-
 ---
 
 <Layout>
 	<Landing />
 	<Banner />
-	<TitleSection imageUrl="src/assets/banffTitle1.jpg" topWord="discover" bottomWord="banff"  />
+	<Title imageUrl="src/assets/banffTitle1.jpg" topWord="discover" bottomWord="banff"  />
 	<Reservations />
-	<TitleSection imageUrl="src/assets/banffTitle2.jpg" topWord="explore" bottomWord="history" />
-	<ContentSection />
+	<Title imageUrl="src/assets/banffTitle2.jpg" topWord="explore" bottomWord="history" />
+	<History />
 </Layout>

@@ -1,0 +1,56 @@
+---
+const { topWord, bottomWord, imageUrl } = Astro.props;
+---
+
+<section>
+	<img src={imageUrl} width={3840} height={2160} id='parallax' alt={'placeholder'} />
+	<h1 id="title">{topWord}<span>{bottomWord}</span></h1>
+</section>
+
+<script>
+	import { animate, inView, scroll } from "motion";
+	inView("#title", (element) => {
+		console.log("title has entered viewport");
+		animate(element, { opacity: [0, 1] }, { duration: 2, ease: "easeOut" });
+	});
+	document.querySelectorAll("section > #parallax").forEach((item) => {
+        scroll(animate(item, { y: [-300, 0, 300] }), { target: item, offset: ["start end", "end end", "end start"] })
+    });
+</script>
+
+<style>
+	section {
+		height: 100dvh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#parallax {
+		position: absolute;
+		z-index: -5;
+		width: 100%;
+		height: auto;
+	}
+
+	#title {
+		display: flex;
+		flex-direction: column;
+		font-family: "Inter-Light", Helvetica;
+		font-weight: 400;
+		color: #ffffff;
+		font-size: 48px;
+		text-align: center;
+		letter-spacing: 12px;
+		line-height: normal;
+	}
+
+	#title span {
+		font-weight: 900;
+		letter-spacing: 5.76px;
+		text-transform: uppercase;
+	}
+
+</style>
