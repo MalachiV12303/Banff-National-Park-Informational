@@ -1,9 +1,10 @@
 ---
+import Image from "astro/components/Image.astro";
 const { topWord, bottomWord, imageUrl } = Astro.props;
 ---
 
 <section>
-	<img src={imageUrl} width={3840} height={2160} id='parallax' alt={'placeholder'} />
+	<Image src={imageUrl} width={3840} height={2160} id='parallax' alt={'placeholder'} />
 	<h1 id="title">{topWord}<span>{bottomWord}</span></h1>
 </section>
 
