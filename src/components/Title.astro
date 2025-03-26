@@ -1,10 +1,13 @@
 ---
 import { Image } from "astro:assets";
-const { topWord, bottomWord, imageUrl } = Astro.props;
+import imageBackground from "../assets/banffTitle1.jpg";
+import imageBackground2 from "../assets/banffTitle2.jpg";
+
+const { topWord, bottomWord, imageSelect = true } = Astro.props;
 ---
 
 <section>
-	<Image src={imageUrl} width={3840} height={2160} id='parallax' alt={'placeholder'} />
+	<Image src={imageSelect ? imageBackground : imageBackground2} width={3840} height={2160} id='parallax' alt={'placeholder'} />
 	<h1 id="title">{topWord}<span>{bottomWord}</span></h1>
 </section>
 
