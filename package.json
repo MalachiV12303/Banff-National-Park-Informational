@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^8.1.2",
-    "@astrojs/vue": "^5.0.8",
     "@tresjs/core": "^4.3.3",
     "astro": "^5.5.2",
     "lenis": "^1.2.3",
-    "motion": "^12.5.0",
-    "three": "^0.174.0",
-    "vue": "^3.5.13"
+    "motion": "^12.5.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.174.0"
   }
 }

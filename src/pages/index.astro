@@ -4,19 +4,18 @@ import Reservations from "../components/Reservations.astro";
 import History from "../components/History.astro";
 import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
-import Landing from "../components/Landing.vue";
+import Landing from "../components/Landing.astro";
 ---
 
 <Layout>
-	<div class="screen">
-		<Landing />
-	</div>
+	<Landing />
 	<Banner />
 	<Title topWord="discover" bottomWord="banff" />
 	<Reservations />
 	<Title imageSelect={false} topWord="explore" bottomWord="history" />
 	<History />
 </Layout>
+
 <script>
 	import Lenis from "lenis";
 	// Initialize Lenis
@@ -29,8 +28,3 @@ import Landing from "../components/Landing.vue";
 	}
 	requestAnimationFrame(raf);
 </script>
-<style>
-	.screen{
-		height: 100dvh;
-	}
-</style>
