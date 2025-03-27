@@ -1,16 +1,15 @@
 ---
-import Banner from '../components/Banner.astro';
-import Reservations from '../components/Reservations.astro';
-import History from '../components/History.astro';
-import Title from '../components/Title.astro';
-import Layout from '../layouts/Layout.astro';
-import Landing from '../components/Landing.astro';
+import Banner from "../components/Banner.astro";
+import Reservations from "../components/Reservations.astro";
+import History from "../components/History.astro";
+import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import Landing from "../components/Landing.astro";
 ---
-
 <Layout>
 	<Landing />
 	<Banner />
-	<Title topWord="discover" bottomWord="banff"  />
+	<Title topWord="discover" bottomWord="banff" />
 	<Reservations />
 	<Title imageSelect={false} topWord="explore" bottomWord="history" />
 	<History />
