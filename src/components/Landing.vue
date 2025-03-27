@@ -1,17 +1,24 @@
 ---
 import video from "../assets/bannervideo.mp4"
 ---
+<script>
+	import { TresCanvas } from '@tresjs/core'
+</script>
 
-
-<section>
+<template>
 	<h1 class="testFadeIn noselect">BANFF</h1>
 	<video src={video} playsinline autoplay muted loop preload="true" width="3840" height="2160" ></video>
-</section>
+</template>
 
-<script>
-	import { animate } from "motion";
-	animate(".testFadeIn", { opacity: 1 }, { duration: 2 });
-</script>
+<!-- <template>
+	<TresCanvas clear-color="#82DBC5" window-size>
+		<TresPerspectiveCamera />
+		<TresMesh @click="onClick">
+			<TresBoxGeometry :args="[1, 1, 1]" />
+			<TresMeshNormalMaterial />
+		</TresMesh>
+	</TresCanvas>
+</template> -->
 
 <style>
 	.testFadeIn {

@@ -4,11 +4,13 @@ import Reservations from "../components/Reservations.astro";
 import History from "../components/History.astro";
 import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
-import Landing from "../components/Landing.astro";
+import Landing from "../components/Landing.vue";
 ---
 
 <Layout>
-	<Landing />
+	<div class="screen">
+		<Landing />
+	</div>
 	<Banner />
 	<Title topWord="discover" bottomWord="banff" />
 	<Reservations />
@@ -27,3 +29,8 @@ import Landing from "../components/Landing.astro";
 	}
 	requestAnimationFrame(raf);
 </script>
+<style>
+	.screen{
+		height: 100dvh;
+	}
+</style>
