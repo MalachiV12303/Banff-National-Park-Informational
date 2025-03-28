@@ -9,7 +9,7 @@
 		<div class="div">1920</div>
 		<div class="div">1940</div>
 	</div>
-	<div class="divider"/>
+	<div class="divider"></div>
 	<div class="information">
 		<p class="p">
 			with the passage of the National Parks Act, the area of Banff was
@@ -29,7 +29,8 @@
 			by 1911, Banff was accessible by automobile from Calgary
 		</p>
 		<p class="text-wrapper-7">
-			the Stoney Nakoda First Nation were removed from Banff National Park between the years 1890 and 1920
+			the Stoney Nakoda First Nation were removed from Banff National Park
+			between the years 1890 and 1920
 		</p>
 		<p class="text-wrapper-5">
 			under the Rocky Mountain Parks Act, the park was expanded to 674 km2
@@ -40,7 +41,6 @@
 			reserve of 26 square kilometers around the hot springs at Cave and
 			Basin as a public park known as the Banff Hot Springs Reserve
 		</p>
-		
 	</div>
 	<div class="image-frame">
 		<div class="image"></div>
@@ -54,6 +54,7 @@
 		width: screen;
 		height: 100dvh;
 		position: relative;
+		padding: 0 2rem;
 
 		color: #ffffff;
 		font-family: "Inter-Black", Helvetica;
@@ -64,9 +65,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 24px;
+		gap: 10px;
 	}
-	
+
 	section .dates {
 		display: flex;
 		flex-direction: column;
@@ -161,7 +162,6 @@
 	}
 
 	section .image-frame {
-		margin-left: 4rem;
 		position: relative;
 		width: 294px;
 		height: 680px;
@@ -200,5 +200,21 @@
 		background-image: url(../assets/banffhist3.jpg);
 		background-size: cover;
 		background-position: 50% 50%;
+	}
+
+	.image-frame {
+		display: border-box;
+	}
+	
+	@media screen and (max-width: 800px) {
+		.image-frame {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		section {
+			font-size: 12px;
+		}
 	}
 </style>

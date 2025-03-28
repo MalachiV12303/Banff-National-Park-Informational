@@ -44,9 +44,9 @@
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-		padding-left: 14rem;
-		padding-right: 14rem;
-		gap: 12rem;
+		padding-left: 8rem;
+		padding-right: 8rem;
+		gap: 4rem;
 	}
 
 	h1 {
@@ -99,5 +99,13 @@
 
 	.gap-large{
 		gap: 2rem;
+	}
+
+	@media screen and (max-width: 800px) {
+		section {
+			flex-direction: column;
+			padding-left: 4rem;
+			padding-right: 4rem;
+		}
 	}
 </style>

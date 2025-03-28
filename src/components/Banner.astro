@@ -30,9 +30,8 @@ import Typewriter from "astro-typewriter";
 <style>
 	#content {
 		color: #ffffff;
-		width: 20%;
-		padding-left: 14rem;
-		padding-right: 14rem;
+		width: 30%;
+		padding: 0 8rem;
 	}
 
 	section {
@@ -51,7 +50,6 @@ import Typewriter from "astro-typewriter";
 		font-size: 20px;
 		letter-spacing: 4px;
 		line-height: normal;
-		white-space: nowrap;
 	}
 
 	p {
@@ -69,5 +67,19 @@ import Typewriter from "astro-typewriter";
 		filter: brightness(60%);
 		width: 100%;
 		height: auto;
+	}
+
+	@media screen and (max-width: 800px) {
+		#content {
+			width: 80%;
+			padding: 0 4rem;
+		}
+	}
+
+	@media screen and (max-width: 1500px) {
+		#backgroundImage {
+			width: auto;
+			height: 100%;
+		}
 	}
 </style>
