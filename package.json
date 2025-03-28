@@ -12,6 +12,7 @@
     "@astrojs/vercel": "^8.1.2",
     "@tresjs/core": "^4.3.3",
     "astro": "^5.5.2",
+    "astro-typewriter": "^1.0.4",
     "lenis": "^1.2.3",
     "motion": "^12.5.0"
   },

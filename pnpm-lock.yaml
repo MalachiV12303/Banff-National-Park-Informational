@@ -17,6 +17,9 @@ importers:
       astro:
         specifier: ^5.5.2
         version: 5.5.2(@types/node@22.13.11)(rollup@4.35.0)(typescript@5.8.2)
+      astro-typewriter:
+        specifier: ^1.0.4
+        version: 1.0.4(astro@5.5.2(@types/node@22.13.11)(rollup@4.35.0)(typescript@5.8.2))
       lenis:
         specifier: ^1.2.3
         version: 1.2.3(vue@3.5.13(typescript@5.8.2))
@@ -663,6 +666,11 @@ packages:
 
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
+
+  astro-typewriter@1.0.4:
+    resolution: {integrity: sha512-0DZMySKUX7XqimMtInyO6KmGyrPOJzh/h7sq7na0tw1I1qegyXPeIZq/NoLTHxd//4OqvVw/9WL4I2l353Km/A==}
+    peerDependencies:
+      astro: ^5.0.0
 
   astro@5.5.2:
     resolution: {integrity: sha512-SOTJxB8mqxe/KEYEJiLIot0YULiCffyfTEclwmdeaASitDJ7eLM/KYrJ9sx3U5hq9GVI17Z4Y0P/1T2aQ0ZN3A==}
@@ -2347,6 +2355,10 @@ snapshots:
   aria-query@5.3.2: {}
 
   array-iterate@2.0.1: {}
+
+  astro-typewriter@1.0.4(astro@5.5.2(@types/node@22.13.11)(rollup@4.35.0)(typescript@5.8.2)):
+    dependencies:
+      astro: 5.5.2(@types/node@22.13.11)(rollup@4.35.0)(typescript@5.8.2)
 
   astro@5.5.2(@types/node@22.13.11)(rollup@4.35.0)(typescript@5.8.2):
     dependencies:

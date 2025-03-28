@@ -1,6 +1,7 @@
 ---
 import imageBackground from "../assets/banner.jpg";
 import { Image } from "astro:assets";
+import Typewriter from "astro-typewriter";
 ---
 
 <section>
@@ -11,7 +12,7 @@ import { Image } from "astro:assets";
 		id="backgroundImage"
 		alt={"placeholder"}
 	/>
-	<div>
+	<div id="content">
 		<h1>Canada's First National Park</h1>
 		<p>
 			Rocky Mountain peaks, turquoise glacial lakes, a picture-perfect
@@ -27,7 +28,8 @@ import { Image } from "astro:assets";
 </section>
 
 <style>
-	div {
+	#content {
+		color: #ffffff;
 		width: 20%;
 		padding-left: 14rem;
 		padding-right: 14rem;
@@ -46,7 +48,6 @@ import { Image } from "astro:assets";
 	h1 {
 		font-family: "Inter-Black", Helvetica;
 		font-weight: 600;
-		color: #ffffff;
 		font-size: 20px;
 		letter-spacing: 4px;
 		line-height: normal;
@@ -65,7 +66,7 @@ import { Image } from "astro:assets";
 	#backgroundImage {
 		position: absolute;
 		z-index: -1;
-		filter: brightness(50%);
+		filter: brightness(60%);
 		width: 100%;
 		height: auto;
 	}

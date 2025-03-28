@@ -13,6 +13,7 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 
 <script>
 	import { animate, inView, scroll } from "motion";
+
 	inView("#title", (element) => {
 		console.log("title has entered viewport");
 		animate(element, { opacity: [0, 1] }, { duration: 2, ease: "easeOut" });
@@ -20,6 +21,7 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 	document.querySelectorAll("section > #parallax").forEach((item) => {
         scroll(animate(item, { y: [-300, 0, 300] }), { target: item, offset: ["start end", "end end", "end start"] })
     });
+	
 </script>
 
 <style>
@@ -30,6 +32,13 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
+	}
+	svg{
+		z-index: 10;
+		width: 25%;
+		height: 25%;
+		position: absolute;
+		scale: 1.5;
 	}
 
 	#parallax {
