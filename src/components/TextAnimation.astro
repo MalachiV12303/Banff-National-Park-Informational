@@ -1,0 +1,37 @@
+---
+const { text = 'example text', className } = Astro.props;
+---
+<h1 class={`${className}`} id="textContainer">
+	{text.split(' ').map((word: string)=>(
+        <span>
+            {word.split('').map((char)=>(
+                <span>{char}</span>
+            ))}
+        </span>
+        <span/>
+    ))}
+</h1>
+
+<script>
+    import { animate, stagger, inView } from 'motion';
+    inView("#textContainer", () => {
+        animate('span', { opacity: 1, y: [10, 0] }, {delay: stagger(0.1)});
+	});
+</script>
+
+<style>
+    .header {
+		margin: 0;
+		font-family: "Inter-Black", Helvetica;
+		font-weight: 600;
+		color: #ffffff;
+		font-size: 22px;
+		letter-spacing: 4px;
+		line-height: normal;
+		white-space: nowrap;
+	}
+    span{
+        opacity: 0;
+        display: inline-block;
+    }
+</style>

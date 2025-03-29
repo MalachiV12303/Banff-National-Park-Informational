@@ -1,5 +1,5 @@
 ---
-
+import TextAnimation from "./TextAnimation.astro";
 ---
 
 <section>
@@ -13,7 +13,7 @@
 	</div>
 	<div id="links" class="gap-large">
 		<div class="gap-small">
-			<h1>Banff National Park</h1>
+			<TextAnimation once text="Banff National Park" className="header" />
 			<p>
 				Home to glacial lakes and stunning mountain peaks, it's no
 				wonder Banff National Park is an adventure seekers paradise!
@@ -23,7 +23,7 @@
 			<a href="https://parks.canada.ca/pn-np/ab/banff/activ/camping" target="_blank"> click for more information </a>
 		</div>
 		<div class="gap-small">
-			<h1>Lake Louise</h1>
+			<TextAnimation once text="Lake Louise" className="header" />
 			<p>
 				Choose from multiple service options to Banff and Lake Louise
 				with ABest Transport and Tour Services, Alpine Limousine &
@@ -50,6 +50,19 @@
 	}
 
 	h1 {
+		margin: 0;
+		font-family: "Inter-Black", Helvetica;
+		font-weight: 600;
+		color: #ffffff;
+		font-size: 20px;
+		letter-spacing: 4px;
+		line-height: normal;
+		white-space: nowrap;
+		text-decoration: underline;
+		text-underline-offset: 8px;
+	}
+
+	.title {
 		margin: 0;
 		font-family: "Inter-Black", Helvetica;
 		font-weight: 600;
