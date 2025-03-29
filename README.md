@@ -1,10 +1,8 @@
-## Banff Informational
-https://banffmv.vercel.app/
-
-informational website by Malachi Valle to demonstrate understanding of the following technologies/concepts:  
--front end web development  
--astro  
--html and css  
--javascript  
--responsive design  
--motion  
+## Banff National Park - Informational (Front-End Development)
+https://banffmv.vercel.app  
+### Demonstrates understanding of the following technologies/concepts:  
+- Responsive Design
+- HTML and CSS
+- Astro  
+- Javascript
+- Motion
