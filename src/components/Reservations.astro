@@ -37,6 +37,10 @@ import TextAnimation from "./TextAnimation.astro";
 </section>
 
 <style>
+	#info{
+		padding: 0 2rem;
+	}
+
 	section {
 		position: relative;
 		display: flex;
@@ -44,8 +48,8 @@ import TextAnimation from "./TextAnimation.astro";
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-		padding-left: 8rem;
-		padding-right: 8rem;
+		padding-left: 6rem;
+		padding-right: 6rem;
 		gap: 4rem;
 	}
 
@@ -87,6 +91,7 @@ import TextAnimation from "./TextAnimation.astro";
 
 	a {
 		font-family: "Inter-Black", Helvetica;
+		text-decoration: none;
 		letter-spacing: 1px;
 		padding: 12px 35px;
 		background-color: #656565;
@@ -120,5 +125,8 @@ import TextAnimation from "./TextAnimation.astro";
 			padding-left: 4rem;
 			padding-right: 4rem;
 		}
+		#info{
+		padding: 0;
+	}
 	}
 </style>
