@@ -15,7 +15,7 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 	import { animate, inView, scroll } from "motion";
 
 	inView("#title", (element) => {
-		console.log("title has entered viewport");
+		// console.log("title has entered viewport");
 		animate(element, { opacity: [0, 1] }, { duration: 2, ease: "easeOut" });
 	});
 	document.querySelectorAll("section > #parallax").forEach((item) => {
@@ -26,7 +26,7 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 
 <style>
 	section {
-		height: 100dvh;
+		height: 100svh;
 		display: flex;
 		align-items: center;
 		justify-content: center;

@@ -44,12 +44,11 @@ import TextAnimation from "./TextAnimation.astro";
 	section {
 		position: relative;
 		display: flex;
-		height: 95dvh;
+		min-height: 95svh;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-		padding-left: 6rem;
-		padding-right: 6rem;
+		padding: 0 6rem;
 		gap: 4rem;
 	}
 
@@ -122,11 +121,11 @@ import TextAnimation from "./TextAnimation.astro";
 	@media screen and (max-width: 800px) {
 		section {
 			flex-direction: column;
-			padding-left: 4rem;
-			padding-right: 4rem;
+			padding: 4rem 4rem;
+
 		}
 		#info{
-		padding: 0;
-	}
+			padding: 0;
+		}
 	}
 </style>
