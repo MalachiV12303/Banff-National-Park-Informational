@@ -1,20 +1,33 @@
 ---
-const { year = 0, text="" } = Astro.props;
+const { year = 0, text = "" } = Astro.props;
 ---
 
 <li>
-    <span>{ year }.</span>
-    { text }
+    <span class="mono">{year}.</span><br />
+    {text}
 </li>
 
 <style>
     span {
-        font-size: var(--text-base);
+        font-size: var(--text-2xl);
         color: var(--foreground-muted);
+        letter-spacing: 2px;
+        transition: all 0.3s ease-in-out;
     }
+
     li {
         font-size: var(--text-lg);
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         line-height: 1.5;
+    }
+
+    li:hover span {
+        color: var(--foreground);
+    }
+
+    @media screen and (min-width: 640px) {
+        span {
+            font-size: var(--text-lg);
+        }
     }
 </style>
