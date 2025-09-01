@@ -1,219 +1,76 @@
 ---
+import HistoryEntry from "./HistoryEntry.astro";
 
+const history = [
+	{
+		year: 1883,
+		text: "Canadian Pacific Railway (CPR) workers discover natural hot springs on Sulphur Mountain.",
+	},
+	{
+		year: 1885,
+		text: "The Canadian government establishes a 10-square-mile (26-square-km) reserve around the hot springs, creating the first iteration of a national park.",
+	},
+	{
+		year: 1887,
+		text: "The reserve is expanded and named the Rocky Mountains Park of Canada, officially becoming Canada's first national park.",
+	},
+	{
+		year: 1888,
+		text: "The iconic Banff Springs Hotel is built by the CPR, promoting the area as a luxury wilderness destination.",
+	},
+	{
+		year: 1902,
+		text: "The park's boundaries are significantly expanded to include areas around Lake Louise and other rivers.",
+	},
+	{
+		year: 1911,
+		text: "Pressure from commercial interests leads to a reduction in the park's size and Banff became accessible by autobile from Calgary.",
+	},
+	{
+		year: 1916,
+		text: "The Brewsters began offering motorcoach tours of Banff.",
+	},
+	{ year: 1920, text: "Access to Lake Louise by road was available." },
+	{
+		year: 1923,
+		text: "The Banff-Windermere Road opens, connecting Banff to British Columbia.",
+	},
+	{
+		year: 1930,
+		text: "The National Parks Act is passed, fixing the park's boundaries at 6,697 km² (2,586 sq mi) and renaming it Banff National Park.",
+	},
+	{
+		year: 1984,
+		text: "Banff National Park is included in the UNESCO Canadian Rocky Mountain Parks World Heritage Site.",
+	},
+	{
+		year: 1990,
+		text: "The Town of Banff is incorporated, the first municipality within a Canadian National Park.",
+	},
+];
 ---
 
 <section>
-	<div class="dates">
-		<div class="text-wrapper">1880</div>
-		<div class="div">1900</div>
-		<div class="div">1920</div>
-		<div class="div">1940</div>
-	</div>
-	<div class="divider"></div>
-	<div class="information">
-		<p class="p">
-			with the passage of the National Parks Act, the area of Banff was
-			fixed at 6,697 km2 and renamed to Banff National Park
-		</p>
-		<p class="text-wrapper-2">
-			the Banff-Windermere Road opens in 1923 to connect Banff with
-			British Columbia
-		</p>
-		<p class="text-wrapper-3">
-			access to Lake Louise by road is accessible
-		</p>
-		<p class="text-wrapper-4">
-			in 1916, the Brewsters offered motorcoach tours of Banff
-		</p>
-		<p class="by-banff-was">
-			by 1911, Banff was accessible by automobile from Calgary
-		</p>
-		<p class="text-wrapper-7">
-			the Stoney Nakoda First Nation were removed from Banff National Park
-			between the years 1890 and 1920
-		</p>
-		<p class="text-wrapper-5">
-			under the Rocky Mountain Parks Act, the park was expanded to 674 km2
-			(260 sq mi) and named Rocky Mountains Park
-		</p>
-		<p class="text-wrapper-6">
-			Prime Minister John A. MacDonald decided to set aside a small
-			reserve of 26 square kilometers around the hot springs at Cave and
-			Basin as a public park known as the Banff Hot Springs Reserve
-		</p>
-	</div>
-	<div class="image-frame">
-		<div class="image"></div>
-		<div class="image-2"></div>
-		<div class="image-3"></div>
+	<div class="historyContainer">
+		<ol>
+			{
+				history.map((entry) => (
+					<HistoryEntry year={entry.year} text={entry.text} />
+				))
+			}
+		</ol>
 	</div>
 </section>
 
 <style>
-	section {
-		width: screen;
-		height: 100svh;
-		position: relative;
-		padding: 4rem 2rem;
-
-		color: #ffffff;
-		font-family: "Inter-Black", Helvetica;
-		font-weight: 300;
-		font-size: 14px;
-		letter-spacing: 2px;
-
-		box-sizing: border-box;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 20px;
+	.historyContainer{
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
-	section .dates {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		justify-content: space-between;
-		position: relative;
-		height: 100%;
-		/* background-color: chartreuse; */
-	}
-
-	section .text-wrapper {
-		position: relative;
-		width: fit-content;
-		margin-top: -1px;
-		line-height: normal;
-		white-space: nowrap;
-	}
-
-	section .div {
-		width: fit-content;
-		line-height: normal;
-		white-space: nowrap;
-	}
-
-	section .divider {
-		width: 1px;
-		height: 100%;
-		background-color: #ffffff;
-		color: #ffffff;
-	}
-
-	section .information {
-		position: relative;
-		height: 100%;
-		width: 700px;
-		/* background-color: goldenrod; */
-	}
-
-	section .p {
-		position: absolute;
-		top: 569px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .text-wrapper-2 {
-		position: absolute;
-		top: 500px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .text-wrapper-3 {
-		position: absolute;
-		top: 455px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .text-wrapper-4 {
-		position: absolute;
-		top: 387px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .by-banff-was {
-		position: absolute;
-		top: 348px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .text-wrapper-5 {
-		position: absolute;
-		top: 175px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .text-wrapper-6 {
-		position: absolute;
-		top: 79px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .text-wrapper-7 {
-		position: absolute;
-		top: 240px;
-		left: 0;
-		line-height: normal;
-	}
-
-	section .image-frame {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		height: 100%;
-	}
-
-	section .image {
-		width: 293px;
-		height: 182px;
-		background-image: url(../assets/banffhist1.jpg);
-		background-size: cover;
-		background-position: 50% 50%;
-	}
-
-	section .image-2 {
-		width: 293px;
-		height: 182px;
-		background-image: url(../assets/banffhist2.jpg);
-		background-size: cover;
-		background-position: 50% 50%;
-	}
-
-	section .image-3 {
-		width: 294px;
-		height: 182px;
-		background-image: url(../assets/banffhist3.jpg);
-		background-size: cover;
-		background-position: 50% 50%;
-	}
-
-	@media screen and (max-width: 800px) {
-		section .image-frame {
-			display: none;
-		}
-	}
-	@media screen and (max-width: 600px) {
-		section {
-			font-size: 12px;
-		}
-	}
-	@media screen and (max-width: 400px) {
-		section .text-wrapper-6 {
-			top: 25px;
-		}
-		section .text-wrapper-5 {
-			top: 150px;
-		}
-		section {
-			font-size: 10px;
-		}
-		
+	ol {
+		border-left: 1px solid var(--foreground);
+		padding-left: 2rem;
 	}
 </style>

@@ -1,0 +1,20 @@
+---
+const { year = 0, text="" } = Astro.props;
+---
+
+<li>
+    <span>{ year }.</span>
+    { text }
+</li>
+
+<style>
+    span {
+        font-size: var(--text-base);
+        color: var(--foreground-muted);
+    }
+    li {
+        font-size: var(--text-lg);
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+</style>
