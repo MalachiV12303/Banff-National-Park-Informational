@@ -11,13 +11,7 @@ const { href = "", imgSrc, title, desc } = Astro.props;
         <div>
             <TextAnimation once text={title} className="header" />
             <p>
-                Banff National Park is located in the province of Alberta in the
-                Canadian Rocky Mountains. It is situated 128 km (80 miles) west
-                of Calgary, 401 km (250 miles) southwest of Edmonton and 850 km
-                (500 miles) northeast of Vancouver. Home to glacial lakes and
-                stunning mountain peaks, it's no wonder Banff National Park is
-                an adventure seekers paradise! It's essential to plan ahead
-                before visiting Banff National Park.
+                { desc }
             </p>
         </div>
     </div>
@@ -60,6 +54,7 @@ const { href = "", imgSrc, title, desc } = Astro.props;
         background-color: var(--foreground-muted-opaque);
         border-radius: 0.75rem;
         width: 100%;
+        height: 100%;
     }
 
     a:hover {
