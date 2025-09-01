@@ -1,131 +1,57 @@
 ---
+import ReservationLink from "./ReservationLink.astro";
 import TextAnimation from "./TextAnimation.astro";
 ---
 
 <section>
-	<div id="info">
-		<p>
-			Banff National Park is located in the province of Alberta in the
-			Canadian Rocky Mountains. It is situated 128 km (80 miles) west of
-			Calgary, 401 km (250 miles) southwest of Edmonton and 850 km (500
-			mi) northeast of Vancouver.
-		</p>
-	</div>
-	<div id="links" class="gap-large">
-		<div class="gap-small">
-			<TextAnimation once text="Banff National Park" className="header" />
-			<p>
-				Home to glacial lakes and stunning mountain peaks, it's no
-				wonder Banff National Park is an adventure seekers paradise!
-				It's essential to plan ahead before visiting Banff National
-				Park.
-			</p>
-			<a href="https://parks.canada.ca/pn-np/ab/banff/activ/camping" target="_blank"> click for more information </a>
-		</div>
-		<div class="gap-small">
-			<TextAnimation once text="Lake Louise" className="header" />
-			<p>
-				Choose from multiple service options to Banff and Lake Louise
-				with ABest Transport and Tour Services, Alpine Limousine &
-				Tours, Banff Airporter, Banff Sedan, Brewster Express, Discover
-				Banff Tours,Mountain Park Transportation and Banff Chauffeur.
-				Prices vary and booking is required.
-			</p>
-			<a href="https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise" target="_blank"> click for more information </a>
-		</div>
+	<div class="container">
+		<h2 class="headerText mono">Reservations</h2>
+		<ul>
+			<li>
+				<ReservationLink
+					href="https://parks.canada.ca/pn-np/ab/banff/activ/camping"
+					title="Banff National Park"
+					imgSrc="/banffLink.avif"
+					desc="Banff National Park is located in the province of Alberta in the Canadian Rocky Mountains. It is situated 128 km (80 miles) west of Calgary, 401 km (250 miles) southwest of Edmonton and 850 km (500 miles) northeast of Vancouver. Home to glacial lakes and stunning mountain peaks, it's no wonder Banff National Park is an adventure seekers paradise! It's essential to plan ahead before visiting Banff National Park."
+				/>
+			</li>
+			<li>
+				<ReservationLink
+					href="https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise"
+					title="Lake Louise"
+					imgSrc="/lakeLink.jpg"
+					desc="Choose from multiple service options to Banff and Lake Louise with ABest Transport and Tour Services, Alpine Limousine & Tours, Banff Airporter, Banff Sedan, Brewster Express, Discover Banff Tours,Mountain Park Transportation and Banff Chauffeur. Prices vary and booking is required."
+				/>
+			</li>
+		</ul>
 	</div>
 </section>
 
 <style>
-	#info{
-		padding: 0 2rem;
+	.headerText {
+		font-size: var(--text-2xl);
+		margin-bottom: 4rem;
+		text-align: center;
 	}
 
-	section {
-		position: relative;
+	ul {
+		list-style-type: none;
 		display: flex;
-		min-height: 95svh;
-		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: center;
-		overflow: hidden;
-		padding: 0 6rem;
 		gap: 4rem;
 	}
 
-	h1 {
-		margin: 0;
-		font-family: "Inter-Black", Helvetica;
-		font-weight: 600;
-		color: #ffffff;
-		font-size: 20px;
-		letter-spacing: 4px;
-		line-height: normal;
-		white-space: nowrap;
-		text-decoration: underline;
-		text-underline-offset: 8px;
-	}
-
-	.title {
-		margin: 0;
-		font-family: "Inter-Black", Helvetica;
-		font-weight: 600;
-		color: #ffffff;
-		font-size: 20px;
-		letter-spacing: 4px;
-		line-height: normal;
-		white-space: nowrap;
-		text-decoration: underline;
-		text-underline-offset: 8px;
-	}
-
-	p {
-		margin: 0;
-		font-family: "Inter-Black", Helvetica;
-		font-weight: 500;
-		color: #ffffff;
-		font-size: 14px;
-		letter-spacing: 2px;
-		line-height: normal;
-	}
-
-	a {
-		font-family: "Inter-Black", Helvetica;
-		text-decoration: none;
-		letter-spacing: 1px;
-		padding: 12px 35px;
-		background-color: #656565;
-		color: #ffffff;
-		width: min-content;
-		white-space: nowrap;
-		transition: all 0.5s ease-in;
-	}
-
-	a:hover {
-		background-color: #3f3f3f;
-		color: #30e7ff;
-	}
-	
-	div {
-		display: flex;
-		flex-direction: column;
-	}
-	
-	.gap-small{
-		gap: 1rem;
-	}
-
-	.gap-large{
-		gap: 2rem;
-	}
-
-	@media screen and (max-width: 800px) {
-		section {
-			flex-direction: column;
-			padding: 4rem 4rem;
-
+	/* targets devices width > 640 */
+	@media screen and (min-width: 768px) {
+		ul {
+			flex-direction: row;
 		}
-		#info{
-			padding: 0;
+	}
+	@media screen and (min-width: 768px) {
+		ul {
+			flex-direction: row;
 		}
 	}
 </style>

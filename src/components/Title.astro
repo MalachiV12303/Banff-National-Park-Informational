@@ -7,18 +7,18 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 ---
 
 <section>
-	<Image src={imageSelect ? imageBackground : imageBackground2} width={3840} height={2160} id='parallax' alt={'placeholder'} />
+	<Image src={imageSelect ? imageBackground : imageBackground2} width={3840} height={2160} id='parallaxTitleImage' alt={'placeholder'} />
 	<h1 id="title">{topWord}<span>{bottomWord}</span></h1>
 </section>
 
 <script>
 	import { animate, inView, scroll } from "motion";
 
-	inView("#title", (element) => {
+	inView("#title", (element: any) => {
 		// console.log("title has entered viewport");
 		animate(element, { opacity: [0, 1] }, { duration: 2, ease: "easeOut" });
 	});
-	document.querySelectorAll("section > #parallax").forEach((item) => {
+	document.querySelectorAll("section > #parallaxTitleImage").forEach((item) => {
         scroll(animate(item, { y: [-300, 0, 300] }), { target: item, offset: ["start end", "end end", "end start"] })
     });
 	
@@ -26,13 +26,14 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 
 <style>
 	section {
-		height: 100svh;
+		height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
 	}
+
 	svg{
 		z-index: 10;
 		width: 25%;
@@ -41,11 +42,14 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 		scale: 1.5;
 	}
 
-	#parallax {
+	#parallaxTitleImage {
 		position: absolute;
 		z-index: -5;
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover; /* makes it behave like background-size: cover */
+		object-position: center; /* keeps it centered */
+
 	}
 
 	#title {
@@ -64,12 +68,5 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 		font-weight: 900;
 		letter-spacing: 5.76px;
 		text-transform: uppercase;
-	}
-
-	@media screen and (max-width: 1600px) {
-		#parallax{
-			height: 100%;
-			width: auto;
-		}
 	}
 </style>
