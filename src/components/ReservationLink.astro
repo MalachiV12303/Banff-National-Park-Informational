@@ -1,5 +1,4 @@
 ---
-import TextAnimation from "./TextAnimation.astro";
 const { href = "", imgSrc, title, desc } = Astro.props;
 ---
 
@@ -9,7 +8,7 @@ const { href = "", imgSrc, title, desc } = Astro.props;
     </div>
     <div class="reservationContent">
         <div>
-            <TextAnimation once text={title} className="header" />
+            <h3 class="header mono">{title}</h3>
             <p>
                 { desc }
             </p>
@@ -31,6 +30,10 @@ const { href = "", imgSrc, title, desc } = Astro.props;
         justify-content: space-between;
         flex-grow: 1;
         margin-top: 1rem;
+    }
+
+    h3{
+        font-size: var(--text-lg);
     }
 
     .reservationContent > p {

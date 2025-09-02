@@ -1,13 +1,12 @@
 ---
 import ReservationLink from "./ReservationLink.astro";
-import TextAnimation from "./TextAnimation.astro";
 ---
 
 <section>
-	<div class="container" id="reservationsContent">
-		<h2 class="headerText mono">Reservations</h2>
+	<div class="container" >
+		<h2 class="headerText mono" id="reservationsContent">Reservations</h2>
 		<ul>
-			<li>
+			<li id="reservationsContent">
 				<ReservationLink
 					href="https://parks.canada.ca/pn-np/ab/banff/activ/camping"
 					title="Banff National Park"
@@ -15,7 +14,7 @@ import TextAnimation from "./TextAnimation.astro";
 					desc="Banff National Park is located in the province of Alberta in the Canadian Rocky Mountains. It is situated 128 km (80 miles) west of Calgary, 401 km (250 miles) southwest of Edmonton and 850 km (500 miles) northeast of Vancouver. Home to glacial lakes and stunning mountain peaks, it's no wonder Banff National Park is an adventure seekers paradise! It's essential to plan ahead before visiting Banff National Park."
 				/>
 			</li>
-			<li>
+			<li id="reservationsContent">
 				<ReservationLink
 					href="https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise"
 					title="Lake Louise"
