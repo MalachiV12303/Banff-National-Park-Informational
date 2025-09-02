@@ -7,21 +7,51 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 ---
 
 <section>
-	<Image src={imageSelect ? imageBackground : imageBackground2} width={3840} height={2160} id='parallaxTitleImage' alt={'placeholder'} />
-	<h1 id="title">{topWord}<span>{bottomWord}</span></h1>
+	<Image
+		src={imageSelect ? imageBackground : imageBackground2}
+		width={3840}
+		height={2160}
+		id="parallaxTitleImage"
+		alt={"placeholder"}
+	/>
+	<div>
+		<h2 id="titleContent">
+			<span class="mono" id="top">
+				{topWord}
+			</span>
+			<span class="mono" id="bot">
+				{bottomWord}
+			</span>
+		</h2>
+	</div>
 </section>
 
 <script>
 	import { animate, inView, scroll } from "motion";
+	inView(
+		"#titleContent", // scope: this element
+		(element: Element) => {
+			animate(
+				element,
+				{ opacity: [0, 1] }, // fade + slide up
+				{ duration: 2, easing: "ease-in-out" },
+			);
+		},
+		{
+			amount: "some", // require fully in view
+			margin: "0px 0px -50% 0px", // add margins
+			once: true, // only animate the first time
+		},
+	);
 
-	inView("#title", (element: any) => {
-		// console.log("title has entered viewport");
-		animate(element, { opacity: [0, 1] }, { duration: 2, ease: "easeOut" });
-	});
-	document.querySelectorAll("section > #parallaxTitleImage").forEach((item) => {
-        scroll(animate(item, { y: [-300, 0, 300] }), { target: item, offset: ["start end", "end end", "end start"] })
-    });
-	
+	document
+		.querySelectorAll("section > #parallaxTitleImage")
+		.forEach((item) => {
+			scroll(animate(item, { y: [-300, 0, 300] }), {
+				target: item,
+				offset: ["start end", "end end", "end start"],
+			});
+		});
 </script>
 
 <style>
@@ -32,14 +62,11 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
+		color: #f7f7f7;
 	}
 
-	svg{
-		z-index: 10;
-		width: 25%;
-		height: 25%;
-		position: absolute;
-		scale: 1.5;
+	#titleContent {
+		opacity: 0;
 	}
 
 	#parallaxTitleImage {
@@ -47,26 +74,35 @@ const { topWord, bottomWord, imageSelect = true } = Astro.props;
 		z-index: -5;
 		width: 100%;
 		height: 100%;
-		object-fit: cover; /* makes it behave like background-size: cover */
-		object-position: center; /* keeps it centered */
-
+		object-fit: cover;
+		object-position: center;
 	}
 
-	#title {
-		display: flex;
-		flex-direction: column;
-		font-family: "Inter-Light", Helvetica;
-		font-weight: 400;
-		color: #ffffff;
-		font-size: 48px;
-		text-align: center;
-		letter-spacing: 12px;
-		line-height: normal;
-	}
-
-	#title span {
-		font-weight: 900;
-		letter-spacing: 5.76px;
+	#top,
+	#bot {
+		filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.6));
 		text-transform: uppercase;
+		display: block;
+		text-align: center;
+	}
+
+	#top {
+		font-size: var(--text-xl);
+		letter-spacing: var(--text-sm);
+	}
+
+	#bot {
+		font-size: var(--text-3xl);
+		letter-spacing: normal;
+	}
+
+	@media screen and (max-width: 640px) {
+		#top {
+			font-size: var(--text-lg);
+		}
+
+		#bot {
+			font-size: 4rem;
+		}
 	}
 </style>

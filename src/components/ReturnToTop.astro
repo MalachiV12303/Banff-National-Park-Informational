@@ -1,0 +1,52 @@
+---
+import MyLogo from "../assets/tree.svg";
+---
+
+<a href="#landing" id="toTopButton">
+    <div id="content">
+        <MyLogo width={25} height={25} />
+        <span class="mono">top</span>
+    </div>
+</a>
+
+<script>
+    import { animate, lenis } from "motion";
+    animate(
+        "#content",
+        { y: [2, -2, 2] },
+        { repeat: Infinity, repeatType: "loop", duration: 1.5 },
+    );
+</script>
+
+<style>
+    #content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+    }
+
+    #toTopButton {
+        aspect-ratio: 1/1;
+        width: 90px;
+        border-radius: 100%;
+        border: 1px solid var(--foreground);
+        background-color: transparent;
+        color: var(--foreground);
+        display: flex;
+        justify-content: center;
+        transition: 0.2s all ease-in-out;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: var(--text-sm);
+        text-decoration: none;
+    }
+
+    #toTopButton:hover {
+        transform: scale(1.1);
+        border: none;
+        background-color: var(--primary);
+        color: var(--background);
+    }
+</style>

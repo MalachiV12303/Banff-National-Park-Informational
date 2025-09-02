@@ -49,11 +49,13 @@
 		--foreground: #070707;
 		--foreground-muted: #4e4e4e;
 		--foreground-muted-opaque: hsla(0, 0%, 31%, 0.05);
+		--primary: #3bc042;
 		--text-sm: 0.875rem;
 		--text-base: 1rem;
 		--text-lg: 1.25rem;
-		--text-xl: 2rem;
-		--text-2xl: 2.5rem;
+		--text-xl: 1.75rem;
+		--text-2xl: 2rem;
+		--text-3xl: 7rem;
 	}
 
 	@media (prefers-color-scheme: dark) {
@@ -67,6 +69,7 @@
 	html {
 		background-color: var(--background);
 		color: var(--foreground);
+		scroll-behavior: smooth;
 	}
 
 	.noSelect {
@@ -113,8 +116,10 @@
 
 	@media screen and (min-width: 1024px) {
 		section {
-			padding-left: 8rem;
-			padding-right: 8rem;
+			padding-left: 10rem;
+			padding-right: 10rem;
+			padding-top: 8rem;
+			padding-bottom: 8rem;
 		}
 	}
 </style>

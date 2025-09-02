@@ -4,7 +4,7 @@ import TextAnimation from "./TextAnimation.astro";
 ---
 
 <section>
-	<div class="container">
+	<div class="container" id="reservationsContent">
 		<h2 class="headerText mono">Reservations</h2>
 		<ul>
 			<li>
@@ -27,9 +27,32 @@ import TextAnimation from "./TextAnimation.astro";
 	</div>
 </section>
 
+<script>
+	import { animate, inView } from "motion";
+		inView(
+		"#reservationsContent", // scope: this element
+		(element: Element) => {
+			animate(
+				element,
+				{ opacity: [0, 1] }, // fade + slide up
+				{ duration: 2, easing: "ease-in-out" },
+			);
+		},
+		{
+			amount: "some", // require fully in view
+			margin: "0px 0px -40% 0px", // add margins
+			once: true, // only animate the first time
+		},
+	);
+</script>
+
 <style>
+	#reservationsContent{
+		opacity: 0;
+	}
+	
 	.headerText {
-		font-size: var(--text-xl);
+		font-size: var(--text-2xl);
 		margin-bottom: 4rem;
 		text-align: center;
 	}

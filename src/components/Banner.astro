@@ -13,7 +13,7 @@ import Typewriter from "astro-typewriter";
 		alt={"placeholder"}
 	/>
 	<div class="container">
-		<div id="content">
+		<div id="bannerContent">
 			<h1 class="mono">Canada's First National Park</h1>
 			<p class="bind">
 				Rocky Mountain peaks, turquoise glacial lakes, a picture-perfect
@@ -29,9 +29,28 @@ import Typewriter from "astro-typewriter";
 	</div>
 </section>
 
+<script>
+	import { animate, inView } from "motion";
+		inView(
+		"#bannerContent", // scope: this element
+		(element: Element) => {
+			animate(
+				element,
+				{ opacity: [0, 1] }, // fade + slide up
+				{ duration: 2, easing: "ease-in-out" },
+			);
+		},
+		{
+			amount: "some", // require fully in view
+			margin: "0px 0px -40% 0px", // add margins
+			once: true, // only animate the first time
+		},
+	);
+</script>
+
 <style>
-	#content {
-		color: #fcfcfc;
+	#bannerContent {
+		opacity: 0;
 	}
 
 	.bind {
@@ -41,10 +60,11 @@ import Typewriter from "astro-typewriter";
 	section {
 		position: relative;
 		min-height: fit-content;
+		color: #fcfcfc;
 	}
 
 	h1 {
-		font-size: var(--text-xl);
+		font-size: var(--text-2xl);
 		letter-spacing: 1px;
 	}
 
@@ -69,7 +89,7 @@ import Typewriter from "astro-typewriter";
 	@media screen and (min-width: 640px) {
 		section {
 			align-items: start;
-			min-height: 90vh;
+			min-height: 100vh;
 		}
 	}
 </style>

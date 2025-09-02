@@ -1,14 +1,17 @@
 ---
 import video from "../assets/bannervideo.mp4";
+import DownArrow from "../assets/downArrow.svg";
+
 ---
 
-<section class="noSelect">
+<section class="noSelect" id="landing">
 	<div class="fadeInContent">
 		<div class="divider"></div>
 		<h1 class="mono">BANFF</h1>
 		<div class="divider"></div>
 		<h2 class="fadeInSubTitle mono">NATIONAL PARK</h2>
 	</div>
+	<DownArrow id="downArrow" width={50} height={50}/>
 	<video
 		class="fadeInVideo"
 		src={video}
@@ -23,6 +26,10 @@ import video from "../assets/bannervideo.mp4";
 
 <script>
 	import { animate } from "motion";
+
+
+
+	animate(".fadeInVideo", { opacity: 1 }, { duration: 3, ease: "easeInOut" });
 	animate(
 		".fadeInContent",
 		{ opacity: 1 },
@@ -33,7 +40,17 @@ import video from "../assets/bannervideo.mp4";
 		{ opacity: 1 },
 		{ delay: 3, duration: 2, ease: "easeInOut" },
 	);
-	animate(".fadeInVideo", { opacity: 1 }, { duration: 3, ease: "easeInOut" });
+	animate(
+        "#downArrow",
+        { y: [4, -4, 4] },
+        { repeat: Infinity, repeatType: "loop", duration: 1.5 },
+    );
+	animate(
+		"#downArrow",
+		{ opacity: 1 },
+		{ delay: 4.5, duration: 2, ease: "easeInOut" },
+	);
+
 </script>
 
 <style>
@@ -41,6 +58,16 @@ import video from "../assets/bannervideo.mp4";
 	.fadeInSubTitle,
 	.fadeInVideo {
 		opacity: 0;
+	}
+
+	#downArrow, .divider, h1, h2{
+		filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.6));
+	}
+
+	#downArrow{
+		position: absolute;
+		bottom: 25%;
+		opacity: 0%;
 	}
 
 	.divider {
@@ -51,7 +78,7 @@ import video from "../assets/bannervideo.mp4";
 	}
 
 	section {
-		height: 100vh; /* full viewport height */
+		height: 100svh; /* full viewport height */
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -75,12 +102,12 @@ import video from "../assets/bannervideo.mp4";
 	}
 
 	h1 {
-		font-size: 7rem;
+		font-size: var(--text-3xl);
 	}
 
 	h2 {
 		margin-top: 0.5rem;
-		font-size: 1.75rem;
+		font-size: var(--text-xl);
 		letter-spacing: 4px;
 		text-align: center;
 	}

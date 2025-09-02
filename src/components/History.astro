@@ -1,5 +1,6 @@
 ---
 import HistoryEntry from "./HistoryEntry.astro";
+import ReturnToTop from "./ReturnToTop.astro";
 
 const history = [
 	{
@@ -59,11 +60,14 @@ const history = [
 				))
 			}
 		</ol>
+		<ReturnToTop />
 	</div>
 </section>
 
+
+
 <style>
-	.historyContainer{
+	.historyContainer {
 		max-width: 1000px;
 		margin-left: auto;
 		margin-right: auto;
@@ -72,5 +76,6 @@ const history = [
 	ol {
 		border-left: 1px solid var(--foreground);
 		padding-left: 2rem;
+		margin-bottom: 4rem;
 	}
 </style>

@@ -2,12 +2,38 @@
 const { year = 0, text = "" } = Astro.props;
 ---
 
-<li>
+<li class="historyEntry">
     <span class="mono">{year}.</span><br />
     {text}
 </li>
 
+<script>
+    import { animate, inView } from "motion";
+    inView(
+        ".historyEntry", // scope: this element
+        (element: Element) => {
+            animate(
+                element,
+                { opacity: [0, 1], y: [10, 0] }, // fade + slide up
+                { duration: 1.2, easing: "ease-out" },
+            );
+        },
+        {
+            amount: "all", // require fully in view
+            margin: "0px 0px -20% 0px", // add margins
+            once: true, // only animate the first time
+        },
+    );
+</script>
+
 <style>
+    .historyEntry {
+        opacity: 0;
+        font-size: var(--text-lg);
+        margin-bottom: 2.5rem;
+        line-height: 1.5;
+    }
+
     span {
         font-size: var(--text-2xl);
         color: var(--foreground-muted);
@@ -15,19 +41,12 @@ const { year = 0, text = "" } = Astro.props;
         transition: all 0.3s ease-in-out;
     }
 
-    li {
-        font-size: var(--text-lg);
-        margin-bottom: 2.5rem;
-        line-height: 1.5;
-    }
-
-    li:hover span {
-        color: var(--foreground);
-    }
-
     @media screen and (min-width: 640px) {
         span {
             font-size: var(--text-lg);
+        }
+        li:hover span {
+            color: var(--foreground);
         }
     }
 </style>
