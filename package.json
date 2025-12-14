@@ -17,5 +17,10 @@
   },
   "devDependencies": {
     "@types/three": "^0.174.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "path-to-regexp": "^6.3.0"
+    }
   }
 }
