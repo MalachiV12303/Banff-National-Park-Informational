@@ -1,21 +1,16 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "jsx": "preserve",
-    "moduleResolution": "nodenext",
-    "module": "nodenext",
+    "types": ["astro/client"],
     "allowJs": true,
     "skipLibCheck": true,
-    "noEmit": true,                // don’t output compiled TS
-    "isolatedModules": true,       // ensures compatibility with ESM
-    "esModuleInterop": true,       // better interop with CJS/ESM packages
-    "resolveJsonModule": true      // allow importing JSON if needed
+    "noEmit": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src",
     "astro.config.*",
-    "env.d.ts",
-    ".astro/types.d.ts"
+    "env.d.ts"
   ],
   "exclude": [
     "dist",
