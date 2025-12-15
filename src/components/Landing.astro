@@ -1,7 +1,6 @@
 ---
-import video from "../assets/bannervideo.mp4";
+import video from "../assets/landingVideo.mp4";
 import DownArrow from "../assets/downArrow.svg";
-
 ---
 
 <section class="noSelect" id="landing">
@@ -11,7 +10,11 @@ import DownArrow from "../assets/downArrow.svg";
 		<div class="divider"></div>
 		<h2 class="fadeInSubTitle mono">NATIONAL PARK</h2>
 	</div>
-	<DownArrow id="downArrow" width={50} height={50}/>
+	<div id="scrollIndicator">
+		<div id="scrollText" class="mono">scroll</div>
+		<div id="animatedLine"></div>
+	</div>
+
 	<video
 		class="fadeInVideo"
 		src={video}
@@ -27,29 +30,29 @@ import DownArrow from "../assets/downArrow.svg";
 <script>
 	import { animate } from "motion";
 
-
-
-	animate(".fadeInVideo", { opacity: 1 }, { delay: 0.5, duration: 3, ease: "easeInOut" });
+	animate(".fadeInVideo", { opacity: 1 }, { delay: 2.25, duration: 2, ease: "easeInOut" });
 	animate(
 		".fadeInContent",
-		{ opacity: 1 },
-		{ delay: 2, duration: 2, ease: "easeInOut" },
+		{ opacity: 1, filter: 'blur(0px)' },
+		{ delay: 0.25, duration: 1.5, ease: [ 0.550, 0.085, 0.640, 0.530 ] },
 	);
 	animate(
 		".fadeInSubTitle",
-		{ opacity: 1 },
-		{ delay: 3, duration: 2, ease: "easeInOut" },
+		{ opacity: 1, filter: 'blur(0px)' },
+		{ delay: 1.25, duration: 1, ease: [ 0.550, 0.085, 0.640, 0.530 ] },
 	);
 	animate(
-        "#downArrow",
-        { y: [4, -4, 4] },
+        "#scrollText",
+        { y: [-8, 0, -8] },
         { repeat: Infinity, repeatType: "loop", duration: 1.5 },
     );
 	animate(
-		"#downArrow",
+		"#scrollIndicator",
 		{ opacity: 1 },
-		{ delay: 4.5, duration: 2, ease: "easeInOut" },
+		{ delay: 3, duration: 2, ease: "easeInOut" },
 	);
+
+	
 
 </script>
 
@@ -60,14 +63,26 @@ import DownArrow from "../assets/downArrow.svg";
 		opacity: 0;
 	}
 
-	#downArrow, .divider, h1, h2{
+	.fadeInContent,
+	.fadeInSubTitle {
+		filter: blur(12px);
+	}
+
+	.divider, h1, h2{
 		filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.6));
 	}
 
-	#downArrow{
+	#scrollIndicator {
 		position: absolute;
-		bottom: 25%;
+		bottom: 0%;
 		opacity: 0%;
+	}
+
+	#animatedLine {
+		margin: 0.5rem auto 0;
+		width: 2px;
+		height: 35px;
+		background-color: #fcfcfc;
 	}
 
 	.divider {
@@ -85,7 +100,7 @@ import DownArrow from "../assets/downArrow.svg";
 		position: relative;
 		overflow: hidden;
 		color: #fcfcfc;
-		background-color: #151515;
+		background-color: rgb(3, 3, 3);
 		/* border-bottom: 1px solid white; */
 		filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.15));
 	}
@@ -102,6 +117,7 @@ import DownArrow from "../assets/downArrow.svg";
 	}
 
 	h1 {
+		margin-top: 8px;
 		font-size: var(--text-3xl);
 	}
 

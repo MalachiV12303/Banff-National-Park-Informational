@@ -1,52 +1,40 @@
 ---
-import MyLogo from "../assets/tree.svg";
+import MyLogo from "../assets/downArrow.svg";
 ---
 
-<a href="#landing" id="toTopButton">
-    <div id="content">
-        <MyLogo width={25} height={25} />
-        <span class="mono">top</span>
+<a href="#landing"  class="mono">
+    <div id="toTop">
+        <MyLogo id="rotate" width={40} height={40} />
     </div>
 </a>
 
 <script>
-    import { animate, lenis } from "motion";
+    import { animate } from "motion";
     animate(
-        "#content",
-        { y: [2, -2, 2] },
+        "#toTop",
+        { y: [-8, 0, -8] },
         { repeat: Infinity, repeatType: "loop", duration: 1.5 },
     );
 </script>
 
-<style>
-    #content {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 2px;
-    }
-
-    #toTopButton {
-        aspect-ratio: 1/1;
-        width: 90px;
-        border-radius: 100%;
-        border: 1px solid var(--foreground);
+<style scoped>
+    a {
         background-color: transparent;
         color: var(--foreground);
-        display: flex;
-        justify-content: center;
         transition: 0.2s all ease-in-out;
-        margin-right: auto;
-        margin-left: auto;
-        font-size: var(--text-sm);
+        font-size: var(--text-lg);
         text-decoration: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem 1.5rem;
     }
 
-    #toTopButton:hover {
+    a:hover {
         transform: scale(1.1);
-        border: none;
-        background-color: var(--primary);
-        color: var(--background);
+        color: var(--primary);
+    }
+
+    #rotate {
+        transform: rotate(180deg);
     }
 </style>

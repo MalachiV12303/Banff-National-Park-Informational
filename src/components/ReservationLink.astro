@@ -1,5 +1,7 @@
 ---
 const { href = "", imgSrc, title, desc } = Astro.props;
+import MyLogo from "../assets/tree.svg";
+
 ---
 
 <a href={href} target="_blank" rel="noreferrer noopener">
@@ -13,23 +15,33 @@ const { href = "", imgSrc, title, desc } = Astro.props;
                 { desc }
             </p>
         </div>
+        <MyLogo id="svgIcon" width={55} height={55} />
     </div>
 </a>
 
 <script>
-    import { animate, stagger, inView } from "motion";
+    import { animate, stagger, inView, hover } from "motion";
     inView("#textContainer", () => {
         animate("span", { opacity: 1, y: [10, 0] }, { delay: stagger(0.1) });
     });
+    
 </script>
 
 <style>
+    #svgIcon {
+        color: var(--foreground-muted);
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        z-index: -1;
+        transition: all 0.2s ease-in-out;
+    }
     .reservationContent {
+        position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         flex-grow: 1;
-        margin-top: 1rem;
+        padding: 1.5rem 2rem 4rem;
     }
 
     h3{
@@ -39,6 +51,7 @@ const { href = "", imgSrc, title, desc } = Astro.props;
     .reservationContent > div > p {
         color: var(--foreground-muted);
         font-size: var(--text-base);
+        margin-top: 0.5rem;
     }
 
     .imageContainer {
@@ -49,23 +62,28 @@ const { href = "", imgSrc, title, desc } = Astro.props;
 
     a {
         color: var(--foreground);
-        padding-top: 1.5rem;
+        /* padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         padding-left: 1rem;
-        padding-right: 1rem;
+        padding-right: 1rem; */
+        overflow: hidden;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         background-color: var(--foreground-muted-opaque);
         border-radius: 0.75rem;
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     a:hover {
-        transform: scale(1.02);
-        background-color: var(--foreground-muted-opaque);
+        transform: scale(1.01);
     }
 
+    a:hover #svgIcon {
+	    color: var(--primary);
+    }
     #backgroundImage {
         position: absolute;
         top: 0;

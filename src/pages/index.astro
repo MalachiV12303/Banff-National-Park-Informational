@@ -22,14 +22,17 @@ import Footer from "../components/Footer.astro";
 	import Lenis from "lenis";
 	// Initialize Lenis
 	const lenis = new Lenis();
+
+	// lenis.scrollTo(0, { immediate: true });
+
 	// Disable scrolling immediately
 	const introAnimation = true;
 	if (introAnimation) {
 		lenis.stop();
-		// Resume scroll after 4 seconds
+		// Resume scroll after 5 seconds
 		setTimeout(() => {
 			lenis.start();
-		}, 7000);
+		}, 5000);
 	}
 	// Use requestAnimationFrame to continuously update the scroll
 	function raf(time: number) {
